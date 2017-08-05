@@ -1,0 +1,44 @@
+<div class="container">
+    <h1>Lista de marcas</h1>
+
+    <%= link_to new_marca_path, class: "btn btn-info" do %>
+        <i class="fa fa-plus-circle"></i> Nueva marca
+      <% end %>
+     
+      <br>
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th>Nombre</th>
+                  <th colspan="3">Acciones</th>
+              </tr>
+          </thead>
+          <tbody>
+              <% @marcas.each do |marca| %>
+                <tr>
+                    <td><%= marca.nombre %></td>
+                    <td>
+                        <%= link_to marca_path(marca), title: "Ver" do %>
+                          <span class="fa fa-eye"></span>
+                        <% end %>
+                        &nbsp;
+                        <%= link_to edit_marca_path(marca), title: "Editar" do %>
+                          <span class="fa fa-pencil"></span>
+                        <% end %>
+                        &nbsp; 
+                        <%= link_to marca_path(marca), title: "Eliminar",
+                          method: :delete,
+                          data:{confirm: '¿Esta seguro que quiere eliminar el registro'} do%>
+                        <span class="fa fa-trash"></span>
+                      <% end %>
+                  </td>
+              </tr>
+          </tbody>
+        <% end %>
+    </table>
+    <br>
+
+    <%= link_to controller: 'welcome' do %>
+        <i class="fa fa-arrow-left"></i> Home
+      <% end %>
+</div>

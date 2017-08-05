@@ -1,0 +1,23 @@
+<%= bootstrap_form_for @marca do |m| %>
+  <% if @marca.errors.any? %>
+    <div id="error_explanation">
+        <p><strong>El registro no fue guardado.</strong></p>
+        <ul>
+            <% @marca.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+  <% end %>
+  <p>
+      <%= m.text_field :nombre %>
+  </p> 
+  <p>
+      
+      <%= m.submit 'Guardar', class: 'btn btn-success'%>
+  </p>
+<% end %>
+  <br>
+<%= link_to  marcas_path do %>
+  <i class="fa fa-arrow-left"></i> Regresar
+<% end %>
