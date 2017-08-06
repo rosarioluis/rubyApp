@@ -4,7 +4,14 @@
     <hr>
     <p>Selecciona un CRUD</p>
     <%= link_to new_marca_path, class: "btn btn-info" do %>
-        <i class="fa fa-plus-circle"></i> Marcas
+        <i class="fa fa-tags"></i> Marcas
       <% end %>
-<%#= link_to 'Productos', controller: 'productos' %>
+        <%= link_to new_producto_path, class: "btn btn-info" do %>
+        <i class="fa fa-shopping-cart"></i> Productos
+      <% end %>
 </div>
+<footer class="footer navbar-fixed-bottom">
+      <div class="container">
+        <p class="text-muted">&copy;2017 Rosario Guadalupe Luis Rodríguez</p>
+      </div>
+    </footer>

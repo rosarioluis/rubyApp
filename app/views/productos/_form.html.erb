@@ -1,0 +1,23 @@
+<%= bootstrap_form_for @producto do |p| %>
+  <% if @producto.errors.any? %>
+    <div id="error_explanation">
+        <div class="alert alert-danger">
+            <strong>El registro no fue guardado</strong>
+            <ul>
+                <% @producto.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+  <% end %>
+  <%= p.text_field :nombre %>
+  <%= p.text_field :descripcion %>
+  <%= p.collection_select :marca, Marca.all, :id, :nombre, :prompt => "Seleccione una marca" %>
+  <%= p.text_field :precio %>
+  <%= p.submit 'Guardar', class: 'btn btn-success' %>
+  <% end %>
+  <br>
+  <%= link_to  productos_path do %>
+    <i class="fa fa-arrow-left"></i> Regresar
+  <% end %>

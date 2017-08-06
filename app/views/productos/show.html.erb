@@ -1,0 +1,24 @@
+<div class="container">
+<h2>Producto</h2>
+<hr>
+<p>
+  <strong>Nombre:</strong>
+  <%= @producto.nombre %>
+</p>
+<p>
+  <strong>Marca:</strong>
+  <%= @producto.marca %>
+</p>
+<p>
+  <strong>Descripción:</strong>
+  <%= @producto.descripcion %>
+</p>
+<p>
+  <strong>Precio:</strong>
+  $<%= @producto.precio %>
+</p>
+<br>
+<%= link_to  productos_path do %>
+  <i class="fa fa-arrow-left"></i> Regresar
+<% end %>
+</div>
